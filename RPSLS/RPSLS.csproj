@@ -42,7 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AIPlayer.cs" />
     <Compile Include="Gestures.cs" />
+    <Compile Include="Gestures2.cs" />
+    <Compile Include="HumanPlayer.cs" />
+    <Compile Include="InputValidation.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

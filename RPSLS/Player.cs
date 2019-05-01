@@ -9,32 +9,39 @@ namespace RPSLS
     class Player
     {
         //Does have
-        bool IsAI;
-        double WinCount;
+        public List<string> GestureList = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        public string GestureChoice;
+        public double WinCount;
+        public InputValidation Validate = new InputValidation();
 
         //Constructor
         public Player()
         {
-            IsAI = false;
             WinCount = 0;
+
+
 
         }
         //Can do this
-        public void MakePlayerAI(YesOrNo)
-        {
-            if (YesOrNo == "Yes")
-            {
-                IsAI = true;
-            }
-            else
-            {
-                IsAI = false;
-            }
-        }
+        //public virtual string ChooseYourGesture()
+        //{
+
+        //}
 
         public void ThisPlayerWon()
         {
             WinCount++;
+        }
+
+        public void NoPlayerWon()
+        {
+            Console.WriteLine("Lul noobs");
+            Console.ReadLine();
+        }
+
+        public virtual string ChooseYourGesture()
+        {
+            return "";
         }
 
     }

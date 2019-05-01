@@ -31,11 +31,15 @@ namespace RPSLS
          * And, as it always has, rock crushes scissors.﻿
          * 
          * List the steps that will be needed to complete the best out of 3 scenario of this game
-         * -First I want the user to choose whether or not to play a single player vs AI or a 2 player game
+         * +-First I want the user to choose whether or not to play a single player vs AI or a 2 player game
          * --play in console or window form choice?
-         * --After that choice I can instantiate two Player objects, changing one of their statuses to AI if needed
+         * +--After that choice I can instantiate two Player objects, changing one of their statuses to AI if needed
+         * +---If one of the players is AI, choose a random gesture during their turn
          * -I will also create a win/loss counting system to keep track of who has won during the best of 3 series
-         * -An object holding all gestures or new object for each gesture?
+         * --After every round, reset variables? and add win count to one player
+         * 
+         * -An object holding all gestures (or new object for each gesture?)
+         * -test PlayerOne.gesture against PlayerTwo.gesture
          * 
          * 
          * 
