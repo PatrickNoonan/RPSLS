@@ -10,6 +10,8 @@ namespace RPSLS
     {
         //can have
         List<string> GestureList = new List<string> {"Rock","Paper","Scissors","Lizard","Spock"};
+        string CurrentGesture;
+        string OpposingGesture;
         
         //constructor
         public Gesture()
@@ -21,6 +23,11 @@ namespace RPSLS
         public string GestureChoosen(TheGesture)
         {
 
+        }
+
+        public string RandomAIGesture()
+        {
+            GestureList
         }
 
     }

@@ -20,9 +20,16 @@ namespace RPSLS
 
         }
         //Can do this
-        public void MakePlayerAI()
+        public void MakePlayerAI(YesOrNo)
         {
-            IsAI = true;
+            if (YesOrNo == "Yes")
+            {
+                IsAI = true;
+            }
+            else
+            {
+                IsAI = false;
+            }
         }
 
         public void ThisPlayerWon()

@@ -37,7 +37,11 @@ namespace RPSLS
          * -I will also create a win/loss counting system to keep track of who has won during the best of 3 series
          * -An object holding all gestures or new object for each gesture?
          * 
+         * 
+         * 
          * List classes you think you will need to include to make this game
+         * -Player class
+         * -Gesture class (or gestures?)
          */
     }
 }
