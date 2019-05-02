@@ -9,7 +9,7 @@ namespace RPSLS
     class Gestures2
     {
         //can have
-        List<string> GestureList = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        List<string> GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
         int d;
         int PlayerOnesNum;
         int PlayerTwosNum;
@@ -31,14 +31,21 @@ namespace RPSLS
             PlayerOnesNum = GestureList.IndexOf(PlayerOnesChoice);
             PlayerTwosNum = GestureList.IndexOf(PlayerTwosChoice);
 
-            //Let's assign a number to each move (0, 1, 2, 3, 4).
-
-            //Notice that every move beats two moves:
-
+            //assign a number to each move (0, 1, 2, 3, 4)
+            //every move beats two moves:
             //The move previous to it in the cycle(or four cases ahead)
             //The move two cases ahead in the cycle
             //So let d = (5 + a - b) % 5.Then:
+            /*
+             * For n >= 3 and n odd:
+                Let d = (n + a - b) % n. Then:
+                If d = 0 => tie
+                If d % 2 = 1 => a wins
+                If d % 2 = 0 => b wins
+                */
             d = (5 + PlayerOnesNum - PlayerTwosNum) % 5;
+                
+                
 
             if (d == 1 || d == 3)
             {
@@ -53,8 +60,8 @@ namespace RPSLS
             else
             {
                 Console.WriteLine("Tie Game, try again?(Yes or No)");
-                string YorN = Console.ReadLine();
-                if (YorN == "Yes")
+                string YorN = Console.ReadLine().ToLower();
+                if (YorN == "yes")
                 {
                     return "Tie";
                 }
@@ -65,10 +72,53 @@ namespace RPSLS
                     return "";
                 }
             }
+            
+            /*
+            if (d == 1 || d == 3)
+            {
+                Console.WriteLine("PlayerOne has beaten PlayerTwo! " + PlayerOnesChoice + " beats " + PlayerTwosChoice + ".");
+                return "PlayerOne";
+            }
+            else if (d == 2 || d == 4)
+            {
+                Console.WriteLine("PlayerTwo has beaten PlayerOne! " + PlayerTwosChoice + " beats " + PlayerOnesChoice + ".");
+                return "PlayerTwo";
+            }
+            else
+            {
+                Console.WriteLine("Tie Game, try again?(Yes or No)");
+                string YorN = Console.ReadLine().ToLower();
+                if (YorN == "yes")
+                {
+                    return "Tie";
+                }
+                else
+                {
+                    Console.WriteLine("Ok so get lost then :/");
+                    Console.ReadLine();
+                    return "";
+                }
+            }
+            */
 
             //d = 1 or d = 3 => a wins
             //d = 2 or d = 4 => b wins
             //d = 0 => tie
+
+            /* 0Rock, 1Paper, 2Scissors, 3Lizard, 4Spock = wrong
+             * Rock Paper Scissors Spock Lizard?
+             * 
+             * Scissors cuts paper. 
+             * Paper covers rock. 
+             * Rock crushes lizard. 
+             * Lizard poisons Spock. 
+             * Spock smashes scissors, 
+             * scissors decapitates lizard. 
+             * Lizard eats paper.
+             * paper disproves Spock. 
+             * Spock vaporizes rock. 
+             * rock crushes scissors.﻿
+            */
 
 
         }

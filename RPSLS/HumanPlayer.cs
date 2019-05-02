@@ -14,15 +14,14 @@ namespace RPSLS
         //Constructor
         public HumanPlayer()
         {
-            GestureChoice = "Not yet chosen";
 
 
         }
         //Can do this
         public override string ChooseYourGesture()
         {
-            Console.WriteLine("What gesture would you like to choose(Rock,Paper,Scissors,Lizard,Spock)(This will be hidden from the other player)");
-            GestureChoice = Console.ReadLine();
+            Console.WriteLine("What gesture would you like to choose(Rock, Paper, Scissors, Lizard, Spock)");
+            GestureChoice = Console.ReadLine().ToLower();
             Validate.IsItValid(GestureChoice);
             return GestureChoice;
         }

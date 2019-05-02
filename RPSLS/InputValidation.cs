@@ -27,7 +27,7 @@ namespace RPSLS
             if (!match.Success)
             {
                 Console.WriteLine("Sorry I didn't quite catch that, try again... or else");
-                ValidationRetry = Console.ReadLine();
+                ValidationRetry = Console.ReadLine().ToLower();
                 IsItValid(ValidationRetry);
             }
         }

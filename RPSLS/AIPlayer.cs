@@ -16,12 +16,10 @@ namespace RPSLS
         //Constructor
         public AIPlayer()
         {
-            GestureChoice = "Not yet chosen";
         }
         //Can do this
         public override string ChooseYourGesture()
         {
-            var random = new Random();
             int index = random.Next(GestureList.Count);
             GestureChoice = GestureList[index];
             Validate.IsItValid(GestureChoice);

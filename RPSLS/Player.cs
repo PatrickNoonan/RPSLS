@@ -9,10 +9,11 @@ namespace RPSLS
     class Player
     {
         //Does have
-        public List<string> GestureList = new List<string>() { "Rock", "Paper", "Scissors", "Lizard", "Spock" };
+        public List<string> GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
         public string GestureChoice;
         public double WinCount;
         public InputValidation Validate = new InputValidation();
+        public Random random = new Random();
 
         //Constructor
         public Player()
@@ -36,7 +37,6 @@ namespace RPSLS
         public void NoPlayerWon()
         {
             Console.WriteLine("Lul noobs");
-            Console.ReadLine();
         }
 
         public virtual string ChooseYourGesture()
