@@ -10,13 +10,13 @@ namespace RPSLS
     class InputValidation
     {
         //has this
-        string regex = @"^[a-zA-Z]+$";
+        string regex;
         string ValidationRetry;
 
         //constructor
         public InputValidation()
         {
-
+            regex = @"^[a-zA-Z]+$";
         }
 
         //does this
@@ -31,5 +31,30 @@ namespace RPSLS
                 IsItValid(ValidationRetry);
             }
         }
+        /*
+        public void YesNoCheck(string Input)
+        {   
+            string YesOrNo = Input.ToLower();
+
+            if (YesOrNo != "yes" || YesOrNo != "no")
+            {
+                Console.WriteLine("Sorry I didn't quite catch that, try again... or else");
+                ValidationRetry = Console.ReadLine().ToLower();
+                IsItValid(ValidationRetry);
+            }
+        }
+
+        public void Check(string Input)
+        {
+            string YesOrNo = Input.ToLower();
+
+            if (YesOrNo != "yes" || YesOrNo != "no")
+            {
+                Console.WriteLine("Sorry I didn't quite catch that, try again... or else");
+                ValidationRetry = Console.ReadLine().ToLower();
+                IsItValid(ValidationRetry);
+            }
+        }
+        */
     }
 }

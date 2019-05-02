@@ -9,10 +9,10 @@ namespace RPSLS
     class Gestures2
     {
         //can have
-        List<string> GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
         int d;
         int PlayerOnesNum;
         int PlayerTwosNum;
+        List<string> GestureList;
         //array of gestures because the size is always the same
         //when can you use a list?
         //string CurrentGesture;
@@ -21,7 +21,7 @@ namespace RPSLS
         //constructor
         public Gestures2()
         {
-
+            GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
         }
 
         //can do 

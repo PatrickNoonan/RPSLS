@@ -9,20 +9,23 @@ namespace RPSLS
     class Player
     {
         //Does have
-        public List<string> GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
+        public List<string> GestureList;
         public string GestureChoice;
         public double WinCount;
-        public InputValidation Validate = new InputValidation();
-        public Random random = new Random();
+        public Random random;
+        public InputValidation Validate;
 
         //Constructor
         public Player()
         {
             WinCount = 0;
+            Validate = new InputValidation();
+            random = new Random();
+            GestureList = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
 
 
 
-        }
+    }
         //Can do this
         //public virtual string ChooseYourGesture()
         //{
