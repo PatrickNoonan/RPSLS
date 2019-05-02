@@ -12,7 +12,7 @@ namespace RPSLS
         static void Main(string[] args)
         {
             MainMenu NewMainMenu = new MainMenu();
-            NewMainMenu.EnterMainMenu();
+            NewMainMenu.RunGame();
 
             //Console.WriteLine($"{variable} is a pretty cool {variable}");
             //this keyword only really used in constructor

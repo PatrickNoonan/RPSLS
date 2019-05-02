@@ -27,10 +27,6 @@ namespace RPSLS
 
     }
         //Can do this
-        //public virtual string ChooseYourGesture()
-        //{
-
-        //}
 
         public void ThisPlayerWon()
         {

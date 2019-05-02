@@ -10,16 +10,17 @@ namespace RPSLS
     {
         //has this
         Player PlayerTwo;
-        string MatchCount;
-        string KeepPlaying;
         InputValidation Validate;
         Player PlayerOne;
         Gestures2 MadeGestures;
-        double MatchCountInt;
-        double MatchHalf;
+        string MatchCount;
+        string KeepPlaying;
         string WhoWon;
         string ChoiceOne;
         string ChoiceTwo;
+        double MatchCountInt;
+        double MatchHalf;
+        double round;
 
         //constructor
         public MainMenu()
@@ -27,7 +28,20 @@ namespace RPSLS
             Validate = new InputValidation();
             PlayerOne = new HumanPlayer();
             MadeGestures = new Gestures2();
+            round = 0;
 
+        }
+        public void RunGame()
+        {
+            if (round == 0)
+            {
+                EnterMainMenu();
+            }
+            StartGame();
+            DecideWinner();
+            CalculateSeriesLeader();
+            CheckForGameOver(MatchCountInt);
+            DisplaySeriesWinner();
         }
 
         //does this
@@ -38,6 +52,7 @@ namespace RPSLS
             Validate.IsItValid(PlayerTwoAIStatus);
             Console.WriteLine("Would you like the match to be a best of 3, 5, or 7?");
             MatchCount = Console.ReadLine().ToLower();
+            MatchCountInt = int.Parse(MatchCount);
 
             if (PlayerTwoAIStatus == "human")
             {
@@ -48,7 +63,6 @@ namespace RPSLS
                 PlayerTwo = new AIPlayer();
             }
 
-            StartGame();
         }
 
         public void StartGame()
@@ -56,14 +70,11 @@ namespace RPSLS
             ChoiceOne = PlayerOne.ChooseYourGesture();
             ChoiceTwo = PlayerTwo.ChooseYourGesture();            
 
-            DecideWinner();
         }
 
         public void DecideWinner()
         {
-
-            WhoWon = MadeGestures.CompareGesture(ChoiceOne, ChoiceTwo);
-            CalculateSeriesLeader();
+            WhoWon = MadeGestures.CompareGesture(ChoiceOne, ChoiceTwo);            
         }
 
         public void CalculateSeriesLeader()
@@ -80,10 +91,7 @@ namespace RPSLS
             else
             {
                 PlayerOne.NoPlayerWon();
-            }
-
-            MatchCountInt = int.Parse(MatchCount);
-            CheckForGameOver(MatchCountInt);
+            }                       
         }
 
         public void CheckForGameOver(double Matches)
@@ -96,7 +104,8 @@ namespace RPSLS
                 Validate.IsItValid(KeepPlaying);
                 if (KeepPlaying == "yes")
                 {
-                    StartGame();
+                    round++;
+                    RunGame();
                 }
                 else
                 {
@@ -104,7 +113,6 @@ namespace RPSLS
                     Console.ReadLine();
                 }
             }
-            DisplaySeriesWinner();
         }
 
         public void DisplaySeriesWinner()
